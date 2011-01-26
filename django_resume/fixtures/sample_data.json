@@ -1,0 +1,243 @@
+[
+  {
+    "pk": 1, 
+    "model": "resume.overview", 
+    "fields": {
+      "text": "<p><strong>Web Developer</strong> with web/ client application development experience at both large and small companies. Recent experience using Python and the Tornado Web Framework. Previous experience with Windows/ Microsoft-based technologies (MFC, Win32). Interest in web application/ service development.</p>\r\n"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "resume.personalinfo", 
+    "fields": {
+      "first_name": "Chris", 
+      "last_name": "Kelly", 
+      "locality": "Boston", 
+      "region": "Massachusetts", 
+      "region_shorthand": "MA", 
+      "linkedin": "http://www.linkedin.com/in/ckellynet", 
+      "email": "chris@ckelly.net"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "resume.education", 
+    "fields": {
+      "school_url": "http://www.vt.edu/", 
+      "name": "Virginia Polytechnic Institute and State University", 
+      "summary": "Bachelor of Science in Computer Science", 
+      "completion_date": "2002-05-12", 
+      "is_current": false, 
+      "location": "Blacksburg, VA", 
+      "start_date": "1998-08-10"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "resume.job", 
+    "fields": {
+      "description": "Helping to build the Future of Music, one API at a time.", 
+      "title": "Web Developer", 
+      "company_url": "http://the.echonest.com/", 
+      "company": "The Echo Nest", 
+      "completion_date": "2011-01-26", 
+      "is_current": true, 
+      "location": "Somerville, MA", 
+      "is_public": true, 
+      "company_image": "", 
+      "start_date": "2009-09-15"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "resume.job", 
+    "fields": {
+      "description": "Worked on internal and external Web sites for the user-targeting startup; Developed site and services using Python, the Django web framework, and Amazon Web Services.", 
+      "title": "Web Developer", 
+      "company_url": "http://lookery.com/", 
+      "company": "Lookery, Inc", 
+      "completion_date": "2009-08-03", 
+      "is_current": false, 
+      "location": "Cambridge, MA/ San Francisco, CA", 
+      "is_public": true, 
+      "company_image": "", 
+      "start_date": "2008-06-16"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 1, 
+      "description": "Led redesign/ reimplementation of the Echo Nest API Platform (http://developer.echonest.com/), allowing for faster and more flexible development and deployment.", 
+      "order": 1
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 1, 
+      "description": "Rebuilt website from a PHP-based system to one using the Django Web Framework", 
+      "order": 1
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 1, 
+      "description": "Rebuilt and restyled the developer documentation system using the Python Sphinx documentation system.", 
+      "order": 2
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 2, 
+      "description": "Integrated Amazon Web Service functionality using the Boto Python library.", 
+      "order": 2
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 1, 
+      "description": "Built API statistics dashboard for use by employees.", 
+      "order": 3
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 2, 
+      "description": "Built internal and user-facing information dashboards for business data reporting.", 
+      "order": 3
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 1, 
+      "description": "Coordinated with external design firms to release a new version of the Echo Nest corporate site (http://the.echonest.com/) and launch a new music app-related blog on the WordPress platform (http://evolver.fm/).", 
+      "order": 4
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 2, 
+      "description": "Built a custom fork of Django-Paypal to support PayPal subscription checkouts.", 
+      "order": 4
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 1, 
+      "description": "Provided development and upkeep for Fanalytics (http://fanalytics.echonest.com/), a record label-specific music analytics and blogger tracking platform.", 
+      "order": 5
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 2, 
+      "description": "Developed scripts pertaining to database maintenance and for the importing and exporting of data from internal APIs.", 
+      "order": 5
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "resume.accomplishment", 
+    "fields": {
+      "job": 2, 
+      "description": "Configured new Amazon EC2 web server images using nginx as a front-end proxy and Apache serving Django using mod_wsgi.", 
+      "order": 6
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "resume.skillset", 
+    "fields": {
+      "name": "Programming Languages"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "resume.skillset", 
+    "fields": {
+      "name": "Frameworks"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 1, 
+      "skill_url": "http://en.wikipedia.org/wiki/Python_%28programming_language%29", 
+      "name": "Python"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 1, 
+      "skill_url": "http://en.wikipedia.org/wiki/Javascript", 
+      "name": "JavaScript"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 1, 
+      "skill_url": "", 
+      "name": "C#"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 1, 
+      "skill_url": "http://en.wikipedia.org/wiki/PHP", 
+      "name": "PHP"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 2, 
+      "skill_url": "http://tornadoweb.org/", 
+      "name": "Tornado"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 2, 
+      "skill_url": "http://www.djangoproject.com/", 
+      "name": "Django"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "resume.skill", 
+    "fields": {
+      "skillset": 2, 
+      "skill_url": "http://jquery.com/", 
+      "name": "jQuery"
+    }
+  }
+]

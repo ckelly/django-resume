@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> Resume </title>
+  <!--[if lt IE 9]>
+    <script src="/media/js/html5.js" />
+  <![endif]-->
+  <link rel="stylesheet" type="text/css" media="screen, projection" charset="utf-8" href="/media/css/screen.css" />
+</head>
+<body id="resume">
+<div id="wrap">
+<div class="contentwrap">
+<div class="container_24">
+<section class="grid_20 prefix_2 suffix_2">
+
+  <!-- Personal Contact Information in hCard markup --> 
+  {% with personal_info|first as personal_info %}
+  <div id="contactinfo" class="vcard"> 
+    <h1 class="fn n" id="name"><a class="url" href="{% if request.is_secure %}https{% else %}http{% endif %}://{{ site_name }}{% url resume_home %}" rel="me"><span class="given-name">{{ personal_info.first_name}}</span> <span class="family-name">{{ personal_info.last_name }}</span></a></h1> 
+    <div class="adr"> 
+      <span class="locality">{{ personal_info.locality }}</span>, <abbr class="region" title="{{ personal_info.region }}">{{ personal_info.region_shorthand }}</abbr> 
+    </div>
+    
+    {% if personal_info.email %}
+    <div class="email"><a href="mailto:{{ personal_info.email }}">{{ personal_info.email }}</a></div>
+    {% endif %}
+    
+    {% if personal_info.linkedin %}
+    <div class="linkedin">
+      <a href="{{ personal_info.linkedin }}">{{ personal_info.linkedin|slice:"11:" }}</a>
+    </div>
+    {% endif %}
+  </div> 
+  {% endwith %}
+  <!-- End Personal Contact Information --> 
+ 
+    <div class="clear"></div> 
+ 
+    <h2>Summary</h2>
+    <p class="summary">
+      {% with overview|first as overview %}
+      {{ overview.text|safe }}
+      {% endwith %}
+    </p>  
+    
+    <h2>Work Experience</h2>
+    <ul id="job-list" class="vcalendar">
+    {% for job in job_list %}
+     {% if job.is_public %}
+     <li class="experience vevent vcard">
+      <span class="org">{{ job.company }}</span> - <span class="location">{{ job.location }}</span>
+      <br />
+      <a class="include" href="#name"></a>
+      <span class="title">{{ job.title }}</span> 
+      <span class="period">(<abbr class="dtstart" title="{{ job.full_start_date }}">{{ job.formatted_start_date }}</abbr> - <abbr class="dtend" title="{{ job.full_end_date }}">{{ job.formatted_end_date }}</abbr>)</span>
+      
+      <div class="description">{{ job.description }}</div>
+      <ul class="achievements">
+        {% for a in job.accomplishment_set.all %}
+          <li>{{ a.description }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+     {% endif %}
+    {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <ul id="skill-list">
+      {% for skillset in skill_sets %}
+      <li class="skillset"><span class="skillset-title">{{ skillset.name }}:&nbsp;</span>
+        {% for s in skillset.skill_set.all %}
+          <a href="{{ s.skill_url }}" class="skill" rel="tag">{{ s.name }}</a>{% if not forloop.last %},&nbsp;{% endif %}
+        {% endfor %}
+      </li>
+      {% endfor %}
+    </ul>
+    
+    <h2>Education</h2>
+    <ul id="edu-list" class="vcalendar">
+    {% for edu in education %}
+     <li class="education vevent vcard">
+      <span class="period"><abbr class="dtstart" title="{{ edu.full_start_date }}">{{ edu.formatted_start_date }}</abbr> - <abbr class="dtend" title="{{ edu.full_end_ate }}">{{ edu.formatted_end_date }}</abbr></span> - 
+      <span class="org"><a rel="employer" href="{{ edu.school_url }}" class="summary url" title="{{ edu.name }}">{{ edu.name }}</a></span> - <span class="location">{{ edu.location }}</span>
+      <div class="summary"> {{ edu.summary }}</div>
+     </li>
+     {% endfor %}
+    </ul>
+
+</section>
+<div class="clear"></div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

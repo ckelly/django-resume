@@ -1,0 +1,79 @@
+@import url("960/960_24_col.css");
+body {
+  margin: 0;
+  color: #333333;
+  background-color: #f8f8f8;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 87.5%;
+  /* 16px * 0.875 = 14px */
+  line-height: 137.5%;
+  /* 16px * 1.375  = 22px */ }
+
+a {
+  text-decoration: none; }
+  a:link, a:visited {
+    color: #0085bd; }
+  a:hover {
+    color: #f78f1e; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: black; }
+
+h1, h2, h3 {
+  font-family: helvetica, arial, sans-serif; }
+
+h4, h5, h6 {
+  font-family: helvetica, arial, sans-serif; }
+
+h1 {
+  font-size: 150.0%; }
+
+h2 {
+  font-size: 137.5%; }
+
+h3 {
+  font-size: 125.0%; }
+
+h4 {
+  font-size: 112.5%; }
+
+h5, h6 {
+  font-size: 100%; }
+
+h2#intro {
+  color: #737373;
+  margin-top: 0.5em; }
+
+header, footer {
+  display: block; }
+
+.contentwrap {
+  background-color: #f8f8f8;
+  padding: 0.5em 0; }
+
+/* resume styles */
+#resume h1, #resume h2 {
+  margin-bottom: 0.3em; }
+#resume .adr, #resume .email, #resume .linkedin, #resume p {
+  padding-left: 0.3em; }
+#resume ul {
+  padding-left: 0.3em; }
+  #resume ul li {
+    list-style: none; }
+    #resume ul li.experience {
+      margin-bottom: 0.8em; }
+      #resume ul li.experience .org {
+        font-size: 1.1em;
+        font-weight: bold; }
+    #resume ul li ul {
+      padding-left: 2em; }
+      #resume ul li ul li {
+        list-style-type: disc; }
+  #resume ul#skill-list li {
+    list-style: none; }
+    #resume ul#skill-list li .skillset-title {
+      font-weight: bold; }
+    #resume ul#skill-list li a {
+      margin-left: 0.2em; }
+
+/* end resume content */

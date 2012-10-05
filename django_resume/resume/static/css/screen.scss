@@ -1,0 +1,103 @@
+@import url("960/960_24_col.css");
+
+$body-color: #333;
+$link-color: #0085BD;
+$link-hover: #F78F1E;
+$font-color: #000;
+$header-color: #FFF;
+$summary-color: #9AAAC1;
+$summary-link-color: #FFF;
+$content-bg: #F8F8F8;
+$intro-color: #737373;
+
+body {
+  margin: 0;
+  color:$body-color;
+  background-color: $content-bg;
+  font-family: helvetica, arial, sans-serif;
+  font-size:87.5%;   /* 16px * 0.875 = 14px */
+  line-height: 137.5%; /* 16px * 1.375  = 22px */
+}
+
+@mixin standard-links {
+    a {
+      text-decoration: none;
+
+      &:link, &:visited {
+        color: $link-color;
+      }
+    
+      &:hover {
+        color: $link-hover;
+      }
+  }
+}
+
+@include standard-links;
+
+h1, h2, h3, h4, h5, h6
+{
+  color: $font-color;
+}
+h1, h2, h3
+{
+  font-family: helvetica, arial, sans-serif;
+}
+
+h4, h5, h6
+{
+  font-family: helvetica, arial, sans-serif;
+}
+
+h1
+{
+  font-size: 150.0%;
+}
+h2
+{
+  font-size:  137.5%;
+}
+h3
+{
+  font-size: 125.0%;
+}
+h4
+{
+  font-size: 112.5%;
+}
+h5, h6{
+  font-size: 100%;
+}
+
+h2#intro {
+  color: $intro-color;
+  margin-top: 0.5em;
+}
+
+
+header, footer
+{
+  display: block;
+}
+
+
+@mixin blue-links {
+  color: $summary-color;
+  
+  & a, & a:link, & a:visited {
+    color: $summary-link-color;
+    border-bottom: 1px dotted $summary-link-color;
+  }
+  
+  & a:hover {
+    border-bottom-style: none; 
+  }
+}
+
+.contentwrap {
+  background-color: $content-bg;
+  padding: 0.5em 0;
+}
+
+@import "resume";
+

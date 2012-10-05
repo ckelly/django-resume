@@ -1,3 +1,4 @@
+{% load url from future %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,7 @@
   <!-- Personal Contact Information in hCard markup --> 
   {% with personal_info|first as personal_info %}
   <div id="contactinfo" class="vcard"> 
-    <h1 class="fn n" id="name"><a class="url" href="{% if request.is_secure %}https{% else %}http{% endif %}://{{ site_name }}{% url resume_home %}" rel="me"><span class="given-name">{{ personal_info.first_name}}</span> <span class="family-name">{{ personal_info.last_name }}</span></a></h1> 
+    <h1 class="fn n" id="name"><a class="url" href="{% if request.is_secure %}https{% else %}http{% endif %}://{{ site_name }}{% url 'resume_home' %}" rel="me"><span class="given-name">{{ personal_info.first_name}}</span> <span class="family-name">{{ personal_info.last_name }}</span></a></h1> 
     <div class="adr"> 
       <span class="locality">{{ personal_info.locality }}</span>, <abbr class="region" title="{{ personal_info.region }}">{{ personal_info.region_shorthand }}</abbr> 
     </div>

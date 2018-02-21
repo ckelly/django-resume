@@ -1,13 +1,10 @@
-import time
-
 from django.db import models 
+import time
 
 class Overview(models.Model):
     text = models.TextField()
-
     class Meta:
         verbose_name_plural = "Overview"
-
     def __unicode__(self):
         return self.text[0:40] + '...'
 
@@ -71,7 +68,7 @@ class Job(models.Model):
     company = models.CharField(max_length=250)
     location = models.CharField(max_length=250)
     title = models.CharField(max_length=250)
-    company_url = models.URLField('Company URL', verify_exists=False)
+    company_url = models.URLField('Company URL')
     description = models.TextField(blank=True)
     start_date = models.DateField()
     completion_date = models.DateField()
@@ -98,7 +95,7 @@ class Job(models.Model):
             return self.completion_date.strftime("%Y-%m-%d")
 
     def formatted_start_date(self):
-        return self.start_date.strftime("%b %Y")
+            return self.start_date.strftime("%b %Y")
         
     def formatted_end_date(self):
         if (self.is_current == True):
@@ -111,7 +108,10 @@ class Job(models.Model):
 
 class Accomplishment(models.Model):
     description = models.TextField()
-    job = models.ForeignKey(Job)
+    #job = models.ForeignKey(Job)
+    job = models.ForeignKey('Job',on_delete=models.CASCADE)
+    
+
     order = models.IntegerField()
 
     class Meta:
@@ -129,8 +129,8 @@ class Skillset(models.Model):
 
 class Skill(models.Model):
     name =  models.CharField(max_length=250)
-    skill_url = models.URLField('Skill URL', blank=True, verify_exists=True)
-    skillset = models.ForeignKey(Skillset)
+    skill_url = models.URLField('Skill URL', blank=True)
+    skillset = models.ForeignKey('Skillset',on_delete=models.CASCADE)
     
     class Meta:
         ordering = ['id']

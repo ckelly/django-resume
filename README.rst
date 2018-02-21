@@ -4,6 +4,6 @@ The project was not working on python 3 and Django 2.0.2 so I decided to rebuild
 
 Run it with:  
 
-```
+``
 python3 manage.py runserver
-```
+``

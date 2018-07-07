@@ -1,6 +1,5 @@
-=============
-Django Resume
-=============
+
+# Django Resume
 
 Django Resume is a Django app built to generate a resume on a user's site. 
 
@@ -12,9 +11,7 @@ Run it with:
 python3 manage.py runserver
 ```
 
-=====
-TODOs
-=====
+# TODOs
 
 * create setup.py for installation & verify installable version works
 * additional admin features like linking skills to skillsets in inline edits.
